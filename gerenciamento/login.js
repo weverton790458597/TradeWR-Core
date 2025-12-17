@@ -27,7 +27,7 @@
       .then(data => {
         if (data && data.success) {
           // redireciona direto para a página principal
-          window.location.href = "/gerenciamento/"; // aqui você já pode usar só a pasta
+          window.location.href = "/tradeWR/"; // aqui você já pode usar só a pasta
         } else {
           erro.textContent = 'E-mail ou senha inválidos';
         }
