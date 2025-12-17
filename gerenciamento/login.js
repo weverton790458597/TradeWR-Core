@@ -25,7 +25,7 @@
       .then(data => {
         if (data && data.success) {
           // 🔥 CAMINHO CORRETO PARA GITHUB PAGES
-          window.location.href = "./tradewr/index.html";
+          window.location.href = "/gerenciamento/tradewr/";
         } else {
           erro.textContent = 'E-mail ou senha inválidos';
         }
