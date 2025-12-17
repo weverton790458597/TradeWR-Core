@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login - TradeWR Gerenciamento</title>
+
+<style>
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .container {
+    background-color: #2b2b2b;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 35px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn .3s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .logo img {
+    width: 80px;
+    margin-bottom: 20px;
+  }
+
+  .instrucao {
+    color: #ccc;
+    font-size: 15px;
+    margin-bottom: 22px;
+    text-align: center;
+  }
+
+  .input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background: #1f1f1f;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  input::placeholder {
+    color: #777;
+  }
+
+  .senha-wrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  #toggleSenha {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    fill: #aaa;
+    width: 22px;
+    height: 22px;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    background: linear-gradient(145deg, #5f5f5f, #4b4b4b);
+    color: white;
+    border: 1px solid #3c3c3c;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    background: linear-gradient(145deg, #6d6d6d, #5a5a5a);
+  }
+
+  .erro {
+    color: red;
+    font-size: 13px;
+    margin-top: 12px;
+    text-align: center;
+  }
+
+  .link-cadastro {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #b5b5b5;
+    text-align: center;
+  }
+
+  .link-cadastro a {
+    color: #3ba4ff;
+    text-decoration: underline;
+  }
+</style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="icon.png" alt="Logo" />
+    </div>
+
+    <div class="instrucao">Entre com seu e-mail e senha</div>
+
+    <div class="input">
+      <input type="text" id="email" placeholder="E-mail" />
+    </div>
+
+    <div class="senha-wrapper">
+      <input type="password" id="senha" placeholder="Senha" />
+      <svg id="toggleSenha" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path d="M12 5c-7.633 0-12 7-12 7s4.367 7 12 7 12-7 12-7-4.367-7-12-7zm0 12a5 5 0 110-10 5 5 0 010 10zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
+      </svg>
+    </div>
+
+    <button id="entrar">Entrar</button>
+
+    <div class="erro" id="erro"></div>
+
+  <script src="login.js"></script>
+</body>
+</html>
