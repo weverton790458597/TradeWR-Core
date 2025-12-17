@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Risk Manager Pro</title>
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="popup.css" />
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+
+    <!-- HEADER -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="logo">⚡</span>
+        <h1>Risk Manager</h1>
+      </div>
+      <span class="version">PRO</span>
+    </header>
+
+    <!-- CONFIGURAÇÕES PRINCIPAIS -->
+    <section class="card config-section">
+      <h2>Configuração do Dia</h2>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="dailyTarget">Meta Diária (R$)</label>
+          <input type="number" id="dailyTarget" placeholder="Ex: 100" />
+        </div>
+
+        <div class="input-group">
+          <label for="dailyStop">Stop Diário (R$)</label>
+          <input type="number" id="dailyStop" placeholder="Ex: -50" />
+        </div>
+      </div>
+
+      <div class="input-grid">
+        <div class="input-group">
+          <label for="initialRisk">Risco Inicial por Trade</label>
+          <input type="number" id="initialRisk" placeholder="Ex: 1" />
+        </div>
+
+       <div class="input-group">
+  <label for="payout">Payout (%)</label>
+  <input type="number" id="payout" placeholder="Ex: 80" />
+</div>
+
+        <div class="input-group">
+          <label for="maxRisk">Risco Máximo por Trade</label>
+          <input type="number" id="maxRisk" placeholder="Ex: 5" />
+		  
+		  
+        </div>
+      </div>
+    </section>
+
+    <!-- STATUS DO DIA -->
+    <section class="card status-section">
+      <h2>Status Atual</h2>
+
+      <div class="status-grid">
+        <div class="status-box pnl">
+          <span class="label">Resultado do Dia</span>
+          <span class="value" id="currentPnL">R$ 0,00</span>
+        </div>
+
+        <div class="status-box target">
+          <span class="label">Falta p/ Meta</span>
+          <span class="value" id="remainingTarget">R$ 0,00</span>
+        </div>
+
+        <div class="status-box stop">
+          <span class="label">Falta p/ Stop</span>
+          <span class="value" id="remainingStop">R$ 0,00</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRÓXIMA ENTRADA -->
+    <section class="card next-trade-section">
+      <h2>Próxima Entrada</h2>
+
+      <div class="next-trade-box">
+        <div class="trade-info">
+          <span class="label">Risco Sugerido</span>
+          <span class="risk-value" id="nextRisk">R$ 0,00</span>
+        </div>
+
+        <div class="trade-info">
+          <span class="label">Status</span>
+          <span class="trade-status" id="tradeStatus">Aguardando</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTROLES -->
+    <section class="card control-section">
+      <h2>Registrar Resultado</h2>
+
+      <div class="button-grid">
+        <button id="btnWin" class="btn btn-win">
+          ✅ Trade Gain
+        </button>
+
+        <button id="btnLoss" class="btn btn-loss">
+          ❌ Trade Loss
+        </button>
+      </div>
+
+      <button id="btnReset" class="btn btn-reset">
+        🔄 Resetar Dia
+      </button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="app-footer">
+      <span>Disciplina > Emoção</span>
+    </footer>
+
+  </div>
+
+  <!-- JS será conectado aqui futuramente -->
+  <script src="popup.js"></script>
+
+</body>
+</html>
