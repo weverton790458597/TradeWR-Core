@@ -1,0 +1,329 @@
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-main: #0e1117;
+  --bg-card: #161b22;
+  --bg-card-light: #1f2633;
+
+  --text-main: #e6edf3;
+  --text-muted: #9da7b3;
+
+  --primary: #4da3ff;
+  --success: #2ecc71;
+  --danger: #e74c3c;
+  --warning: #f1c40f;
+
+  --border: #2a2f3a;
+  --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  --transition: all 0.25s ease;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(180deg, #0b0f14, #0e1117);
+  color: var(--text-main);
+  width: 360px;
+  min-height: 100vh;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.app-container {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   HEADER
+========================= */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.brand h1 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.version {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--primary);
+  background: rgba(77, 163, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+}
+
+/* =========================
+   CARD GENÉRICO
+========================= */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.card h2 {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-main);
+}
+
+/* =========================
+   INPUTS
+========================= */
+.input-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.input-group input {
+  background: var(--bg-card-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  font-size: 13px;
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition);
+}
+
+.input-group input::placeholder {
+  color: #6b7280;
+}
+
+.input-group input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(77, 163, 255, 0.15);
+}
+
+/* =========================
+   STATUS
+========================= */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.status-box {
+  background: var(--bg-card-light);
+  border-radius: var(--radius-sm);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.status-box .label {
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.status-box .value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.status-box.pnl .value {
+  color: var(--primary);
+}
+
+.status-box.target .value {
+  color: var(--success);
+}
+
+.status-box.stop .value {
+  color: var(--danger);
+}
+
+/* =========================
+   PRÓXIMA ENTRADA
+========================= */
+.next-trade-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.trade-info {
+  background: linear-gradient(145deg, #1a2130, #141926);
+  border-radius: var(--radius-sm);
+  padding: 12px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.trade-info .label {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.risk-value {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--warning);
+}
+
+.trade-status {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.control-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.btn {
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.btn-win {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: #0b1f14;
+}
+
+.btn-win:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-loss {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #2b0b0b;
+}
+
+.btn-loss:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.btn-reset {
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-muted);
+}
+
+.btn-reset:hover {
+  border-color: var(--warning);
+  color: var(--warning);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.app-footer {
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.8;
+  margin-top: 6px;
+}
+
+/* =========================
+   MICRO ANIMAÇÕES
+========================= */
+.card,
+.btn,
+.input-group input {
+  transition: var(--transition);
+}
+
+.card:hover {
+  border-color: rgba(77, 163, 255, 0.3);
+}
+
+/* =========================
+   SCROLLBAR (se precisar)
+========================= */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2a2f3a;
+  border-radius: 6px;
+}
+
+.status-running {
+  color: var(--success);
+}
+
+.status-closed {
+  color: var(--danger);
+}
