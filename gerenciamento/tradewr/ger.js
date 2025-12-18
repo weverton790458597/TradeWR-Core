@@ -1,3 +1,15 @@
+// =========================
+// PROTEÇÃO DE LOGIN (OBRIGATÓRIA)
+// =========================
+const token = localStorage.getItem('auth_token');
+const email = localStorage.getItem('auth_email');
+
+if (!token || !email) {
+  localStorage.clear();
+  window.location.replace('/gerenciamento/index.html');
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
 
   /* =========================
@@ -18,18 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const btnWin = document.getElementById('btnWin')
   const btnLoss = document.getElementById('btnLoss')
   const btnReset = document.getElementById('btnReset')
-
- (() => {
-  const token = localStorage.getItem('auth_token');
-  const email = localStorage.getItem('auth_email');
-
-  if (!token || !email) {
-    localStorage.clear();
-    window.location.replace('/gerenciamento/');
-  }
-})();
-
-
 
   /* =========================
      CONSTANTES
