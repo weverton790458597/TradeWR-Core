@@ -27,7 +27,13 @@
       .then(data => {
         if (data && data.success) {
           // redireciona direto para a página principal
-          window.location.href = "/gerenciamento/tradewr"; // aqui você já pode usar só a pasta
+          // cria um token simples de sessão
+localStorage.setItem('auth_token', 'logado');
+localStorage.setItem('auth_email', email);
+
+// redireciona
+window.location.href = "/gerenciamento/tradewr";
+
         } else {
           erro.textContent = 'E-mail ou senha inválidos';
         }
