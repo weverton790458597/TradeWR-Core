@@ -6,7 +6,7 @@ const email = localStorage.getItem('auth_email');
 
 if (!token || !email) {
   localStorage.clear();
-  window.location.replace('/gerenciamento/index.html');
+  window.location.replace('/gerenciamento');
 }
 
 
