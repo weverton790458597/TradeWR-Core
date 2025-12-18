@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (!token || !email) {
     localStorage.clear();
-    window.location.replace('/gerenciamento');
+    window.location.replace('/gerenciamento/');
   }
 })();
 
